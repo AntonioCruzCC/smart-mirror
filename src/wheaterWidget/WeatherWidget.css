@@ -1,0 +1,134 @@
+.weather-widget-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-light {
+    --dayGradientStart: #16d5f7;
+    --dayGradientEnd: #6f7bf7;
+    --dayOrnament:#6f7af75d;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(45deg, var(--dayGradientStart), var(--dayGradientEnd));
+    border-radius: 15px;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-light::after{
+    position: absolute;
+    left: -50%;
+    top: 140px;
+    content: ' ';
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background-color: var(--dayOrnament);
+    box-shadow: 0 0 10px 10px var(--dayOrnament);
+}
+
+.card-dark {
+    --nightGradientStart: #00414d;
+    --nightGradientEnd: #000320;
+    --nightOrament:#00063a5d;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(0deg, var(--nightGradientStart), var(--nightGradientEnd));
+    border-radius: 15px;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-dark::after{
+    position: absolute;
+    left: -50%;
+    top: 140px;
+    content: ' ';
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background-color: var(--nightOrament);
+    box-shadow: 0 0 10px 10px var(--nightOrament);
+}
+
+.card-contents{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.time-and-locale{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.time-and-locale h1{
+    margin: 0;
+}
+
+.locale-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+
+.locale-name img{
+    height: 60%;
+    object-fit: contain;
+    margin-left: 5px;
+}
+
+.weather-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.weather-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.weather-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+.weather-info div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-info img{
+    height: 50%;
+    object-fit: contain;
+    margin-right: 5px;
+}
+
+.next-days-forecast{
+    width: 100%;
+    height: 100%;
+}

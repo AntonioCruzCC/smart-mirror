@@ -1,0 +1,61 @@
+.forecast-card-light {
+    --dayGradientStart: #16d5f7;
+    --dayGradientEnd: #6f7bf7;
+    --dayOrnament:#6f7af75d;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    width: 350px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--dayGradientStart), var(--dayGradientEnd));
+    border-radius: 15px;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.forecast-card-dark {
+    --nightGradientStart: #002b33;
+    --nightGradientEnd: #000320;
+    --nightOrament:#00063a5d;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    width: 350px;
+    height: 80px;
+    background: linear-gradient(0deg, var(--nightGradientStart), var(--nightGradientEnd));
+    border-radius: 15px;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.forecast-card-contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.week-day{
+    margin-left: 15px;
+    font-size: medium;
+}
+
+.forecast-info{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+}
+
+.forecast-info img{
+    height: 40%;
+    object-fit: contain;
+    margin-right: 5px;
+}
