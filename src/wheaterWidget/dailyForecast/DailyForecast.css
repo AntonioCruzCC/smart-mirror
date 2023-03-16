@@ -17,7 +17,7 @@
     animation-name: sliding-animation;
     animation-duration: 500ms;
     animation-delay: calc(var(--animation-order) * 100ms);
-    animation-timing-function: cubic-bezier(.67,.52,.46,.66);
+    animation-timing-function: cubic-bezier(.2,.88,.28,1.4);
     animation-fill-mode: forwards;
 }
 
@@ -40,7 +40,7 @@
     animation-name: sliding-animation;
     animation-duration: 500ms;
     animation-delay: calc(var(--animation-order) * 100ms);
-    animation-timing-function: cubic-bezier(.67,.52,.46,.66);
+    animation-timing-function: cubic-bezier(.2,.88,.28,1.4);
     animation-fill-mode: forwards;
 }
 
