@@ -1,14 +1,17 @@
+import './WeatherWidget.css'
+
 import React from 'react'
 import useInstantWeather from '../instantWeather/useInstantWeather'
 import useLocation from '../location/useLocation'
-import './WeatherWidget.css'
-//import DailyForecast from './dailyForecast/DailyForecast'
+import useForecast from '../forecast/useForecast'
+import DailyForecast from './dailyForecast/DailyForecast'
 import WeatherIcon from './weatherIcon/WeatherIcon'
 
 function WeatherWidget(){
 
     const location = useLocation()
     const instantWeather = useInstantWeather()
+    const forecast = useForecast()
     const nightMode = instantWeather?.weather[0]?.icon?.endsWith('n')
     
         return (
@@ -48,9 +51,11 @@ function WeatherWidget(){
                         </div>
                     }
                 </div>
-                {/*<div className='next-days-forecast'>
-                    <DailyForecast nightMode={nightMode}/>
-                </div>*/}
+                <div className='next-days-forecast'>
+                    {
+                        nightMode && forecast && forecast.daily.slice(1, 5).map((day, index) => <DailyForecast nightMode={nightMode} forecast={day} key={index} index={index}/>)
+                    }
+                </div>
             </div>
         )
 }

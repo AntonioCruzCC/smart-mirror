@@ -5,7 +5,7 @@
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
     transition: 0.3s;
     width: 350px;
-    height: 80px;
+    height: 50px;
     background: linear-gradient(45deg, var(--dayGradientStart), var(--dayGradientEnd));
     border-radius: 15px;
     font-size: x-large;
@@ -13,6 +13,12 @@
     position: relative;
     overflow: hidden;
     margin-top: 10px;
+    opacity: 0%;
+    animation-name: sliding-animation;
+    animation-duration: 500ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-timing-function: cubic-bezier(.67,.52,.46,.66);
+    animation-fill-mode: forwards;
 }
 
 .forecast-card-dark {
@@ -22,7 +28,7 @@
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
     transition: 0.3s;
     width: 350px;
-    height: 80px;
+    height: 50px;
     background: linear-gradient(0deg, var(--nightGradientStart), var(--nightGradientEnd));
     border-radius: 15px;
     font-size: x-large;
@@ -30,6 +36,23 @@
     position: relative;
     overflow: hidden;
     margin-top: 10px;
+    opacity: 0%;
+    animation-name: sliding-animation;
+    animation-duration: 500ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-timing-function: cubic-bezier(.67,.52,.46,.66);
+    animation-fill-mode: forwards;
+}
+
+@keyframes sliding-animation{
+    0%{
+        transform: translate(0%, -50%);
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
 }
 
 .forecast-card-contents{
@@ -48,14 +71,37 @@
 
 .forecast-info{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
     width: 60%;
 }
 
+.forecast-info .humidity-info{
+    width: 30%;
+    height:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .forecast-info img{
-    height: 40%;
+    height:100%;
+    margin-right:5px;
+}
+
+.forecast-info .weather-icon{
+    height: 90%;
+    width: 30%;
+    max-width: 50px;
     object-fit: contain;
-    margin-right: 5px;
+    margin: 0px 5px;
+}
+
+.min-and-max-temp{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
