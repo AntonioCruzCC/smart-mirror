@@ -1,35 +1,7 @@
-.forecast-card-light {
-    --dayGradientStart: #16d5f7;
-    --dayGradientEnd: #6f7bf7;
-    --dayOrnament:#6f7af75d;
+.forecast-card{
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
     width: 350px;
     height: 50px;
-    background: linear-gradient(45deg, var(--dayGradientStart), var(--dayGradientEnd));
-    border-radius: 15px;
-    font-size: x-large;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    margin-top: 10px;
-    opacity: 0%;
-    animation-name: sliding-animation;
-    animation-duration: 500ms;
-    animation-delay: calc(var(--animation-order) * 100ms);
-    animation-timing-function: cubic-bezier(.2,.88,.28,1.4);
-    animation-fill-mode: forwards;
-}
-
-.forecast-card-dark {
-    --nightGradientStart: #002b33;
-    --nightGradientEnd: #000320;
-    --nightOrament:#00063a5d;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
-    width: 350px;
-    height: 50px;
-    background: linear-gradient(0deg, var(--nightGradientStart), var(--nightGradientEnd));
     border-radius: 15px;
     font-size: x-large;
     color: white;
@@ -66,7 +38,7 @@
 
 .week-day{
     margin-left: 15px;
-    font-size: medium;
+    font-size: large;
 }
 
 .forecast-info{
@@ -81,13 +53,13 @@
     width: 30%;
     height:40%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    font-size: large;
 }
 
 .forecast-info img{
     height:100%;
-    margin-right:5px;
 }
 
 .forecast-info .weather-icon{
@@ -104,4 +76,5 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: large;
 }

@@ -1,0 +1,15 @@
+.primary-weather-icon{
+    animation-name: icon-appear;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(.24,.51,.73,1.16);
+}
+
+@keyframes icon-appear{
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 100;
+    }
+}

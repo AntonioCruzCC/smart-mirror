@@ -1,3 +1,12 @@
+*{
+    --dayGradientStart: #16d5f7;
+    --dayGradientEnd: #6f7bf7;
+    --dayOrnament:#6f7af75d;
+    --nightGradientStart: #00414d;
+    --nightGradientEnd: #000320;
+    --nightOrament:#00063a5d;
+}
+
 .weather-widget-content{
     display: flex;
     flex-direction: column;
@@ -5,15 +14,10 @@
     align-items: center;
 }
 
-.card-light {
-    --dayGradientStart: #16d5f7;
-    --dayGradientEnd: #6f7bf7;
-    --dayOrnament:#6f7af75d;
+.card{
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
     width: 350px;
     height: 350px;
-    background: linear-gradient(45deg, var(--dayGradientStart), var(--dayGradientEnd));
     border-radius: 15px;
     font-size: x-large;
     color: white;
@@ -21,7 +25,7 @@
     overflow: hidden;
 }
 
-.card-light::after{
+.card::after{
     position: absolute;
     left: -50%;
     top: 140px;
@@ -29,34 +33,22 @@
     width: 200%;
     height: 200%;
     border-radius: 50%;
+}
+
+.light{
+    background: linear-gradient(45deg, var(--dayGradientStart), var(--dayGradientEnd));
+}
+
+.dark{
+    background: linear-gradient(0deg, var(--nightGradientStart), var(--nightGradientEnd));
+}
+
+.light::after{
     background-color: var(--dayOrnament);
     box-shadow: 0 0 10px 10px var(--dayOrnament);
 }
 
-.card-dark {
-    --nightGradientStart: #00414d;
-    --nightGradientEnd: #000320;
-    --nightOrament:#00063a5d;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(0deg, var(--nightGradientStart), var(--nightGradientEnd));
-    border-radius: 15px;
-    font-size: x-large;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.card-dark::after{
-    position: absolute;
-    left: -50%;
-    top: 140px;
-    content: ' ';
-    width: 200%;
-    height: 200%;
-    border-radius: 50%;
+.dark::after{
     background-color: var(--nightOrament);
     box-shadow: 0 0 10px 10px var(--nightOrament);
 }
@@ -112,9 +104,10 @@
     justify-content: center;
     align-items: center;
     height: 20%;
+    font-size: large;
 }
 
-.weather-info div{
+.weather-info .info-group{
     width: 100%;
     height: 100%;
     display: flex;
@@ -126,6 +119,11 @@
     height: 50%;
     object-fit: contain;
     margin-right: 5px;
+}
+
+.min-max-temp{
+    display: flex;
+    flex-direction: column;
 }
 
 .next-days-forecast{
