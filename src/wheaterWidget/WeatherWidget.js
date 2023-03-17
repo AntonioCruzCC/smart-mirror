@@ -16,14 +16,14 @@ function WeatherWidget() {
 
     return (
         <div className='weather-widget-content'>
-            <div className={'card ' + (nightMode ? 'dark' : 'light')}>
-                {instantWeather ?
+            <div className={'card ' + (forecast && nightMode ? 'dark' : 'light')}>
+                {instantWeather && forecast?
                     <div className='card-contents'>
                         <div className='weather-icon'>
-                            <WeatherIcon icon={instantWeather ? instantWeather.weather[0].icon : '01d'} />
+                            <WeatherIcon icon={instantWeather.weather[0].icon} />
                         </div>
                         <div className='time-and-locale'>
-                            <h1>{instantWeather && (instantWeather.main.temp.toFixed(0) + '°')}</h1>
+                            <h1>{instantWeather.main.temp.toFixed(0) + '°'}</h1>
                             <div className='locale-name'>
                                 <span>{location.localeName}</span>
                                 <img src={require('../assets/pin.png')} alt='pin icon' />
@@ -33,17 +33,17 @@ function WeatherWidget() {
                             <div className='info-group'>
                                 <img src={require('../assets/thermometer.png')} alt='thermometer-icon' />
                                 <div className='min-max-temp'>
-                                    <span>{forecast && (forecast.daily[0].temp.max.toFixed(0) + '°')}</span>
-                                    <span>{forecast && (forecast.daily[0].temp.min.toFixed(0) + '°')}</span>
+                                    <span>{forecast.daily[0].temp.max.toFixed(0) + '°'}</span>
+                                    <span>{forecast.daily[0].temp.min.toFixed(0) + '°'}</span>
                                 </div>
                             </div>
                             <div className='info-group'>
                                 <img src={require('../assets/wind.png')} alt='wind-icon' />
-                                <span>{instantWeather ? instantWeather.wind.speed.toFixed(0) : '0'}Km/h</span>
+                                <span>{instantWeather.wind.speed.toFixed(0) + 'Km/h'}</span>
                             </div>
                             <div className='info-group'>
                                 <img src={require('../assets/wind-humidity.png')} alt='wind-icon' />
-                                <span>{instantWeather ? instantWeather.main.humidity.toFixed(0) : '0'}%</span>
+                                <span>{instantWeather.main.humidity.toFixed(0) + '%'}</span>
                             </div>
                         </div>
                     </div>
@@ -59,6 +59,9 @@ function WeatherWidget() {
                 }
             </div>
             <div className='next-days-forecast'>
+                {   
+                   /* nightMode != null && forecast && <HourlyForecast nightMode={nightMode} forecast={forecast}/>*/
+                }
                 {
                     nightMode != null && forecast && forecast.daily.slice(1, 5).map((day, index) => <DailyForecast nightMode={nightMode} forecast={day} key={index} index={index} />)
                 }

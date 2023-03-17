@@ -1,0 +1,39 @@
+.hourly-forecast-card{
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    width: 350px;
+    height: 100px;
+    border-radius: 15px;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    animation-name: sliding-animation;
+    animation-duration: 500ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-timing-function: cubic-bezier(.2,.88,.28,1.4);
+    animation-fill-mode: forwards;
+}
+
+.hourly-forecast-card-contents{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.hourly-info{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hourly-info .weather-icon{
+    height: 90%;
+    width: 30%;
+    max-width: 50px;
+    object-fit: contain;
+    margin: 0px 5px;
+}
