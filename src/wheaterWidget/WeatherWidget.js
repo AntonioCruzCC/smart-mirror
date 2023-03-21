@@ -5,6 +5,7 @@ import useInstantWeather from '../instantWeather/useInstantWeather'
 import useLocation from '../location/useLocation'
 import useForecast from '../forecast/useForecast'
 import DailyForecast from './dailyForecast/DailyForecast'
+import HourlyForecast from './hourlyForecast/HourlyForecast'
 import WeatherIcon from './weatherIcon/WeatherIcon'
 
 function WeatherWidget() {
@@ -60,7 +61,7 @@ function WeatherWidget() {
             </div>
             <div className='next-days-forecast'>
                 {   
-                   /* nightMode != null && forecast && <HourlyForecast nightMode={nightMode} forecast={forecast}/>*/
+                    nightMode != null && forecast && <HourlyForecast nightMode={nightMode} forecast={forecast}/>
                 }
                 {
                     nightMode != null && forecast && forecast.daily.slice(1, 5).map((day, index) => <DailyForecast nightMode={nightMode} forecast={day} key={index} index={index} />)

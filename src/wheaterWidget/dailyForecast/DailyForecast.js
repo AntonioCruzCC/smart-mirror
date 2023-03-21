@@ -8,8 +8,8 @@ function DailyForecast(props){
                 <div className='week-day'><span>{new Date(props.forecast.dt*1000).toLocaleDateString('pt-BR', { weekday: 'long' })}</span></div>
                 <div className='forecast-info'>
                     <div className='humidity-info'>
-                        <img src={require('../../assets/wind-humidity.png')} alt='wind-icon'/>
-                        <span>{props.forecast.humidity + '%'}</span>
+                        <img src={require('../../assets/drop.png')} alt='pop-icon'/>
+                        <span>{(props.forecast.pop*100).toFixed(0) + '%'}</span>
                     </div>
                     <div className='weather-icon'>
                         <img src={require(`../../assets/${props.forecast.weather[0].icon}.png`)} alt='weatherIcon'/>
