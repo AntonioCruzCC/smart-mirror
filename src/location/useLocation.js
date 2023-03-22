@@ -18,7 +18,7 @@ function useLocation(){
                 limit: 1,
                 appid: process.env.REACT_APP_OPEN_WEATHER_API_KEY
             }
-            axios.get('http://api.openweathermap.org/geo/1.0/reverse', {params: params}).then(({data}) =>{
+            axios.get('https://api.openweathermap.org/geo/1.0/reverse', {params: params}).then(({data}) =>{
                 setLocaleName(data[0].name)
             })
         })
