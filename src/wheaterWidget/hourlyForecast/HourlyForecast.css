@@ -58,3 +58,7 @@
 .hourly-info span {
     font-size: small;
 }
+
+.hourly-forecast-card.light{
+    background: linear-gradient(0deg, var(--dayGradientStart), var(--dayGradientEnd));
+}

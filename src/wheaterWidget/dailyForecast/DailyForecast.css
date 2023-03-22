@@ -78,3 +78,7 @@
     justify-content: space-evenly;
     font-size: large;
 }
+
+.forecast-card.light{
+    background: linear-gradient(0deg, var(--dayGradientStart), var(--dayGradientEnd));
+}
