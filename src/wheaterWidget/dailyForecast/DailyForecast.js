@@ -3,7 +3,7 @@ import './DailyForecast.css'
 
 function DailyForecast(props){
     return (
-        <div className={'forecast-card ' + (props.nightMode ? 'dark' : 'light')} style={{'--animation-order': props.index}}>
+        <div className={'small-card ' + (props.nightMode ? 'dark' : 'light')} style={{'--animation-order': props.index}}>
             <div className='forecast-card-contents'>
                 <div className='week-day'><span>{new Date(props.forecast.dt*1000).toLocaleDateString('pt-BR', { weekday: 'long' })}</span></div>
                 <div className='forecast-info'>

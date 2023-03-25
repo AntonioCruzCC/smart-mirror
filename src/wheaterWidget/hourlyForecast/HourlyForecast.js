@@ -3,8 +3,8 @@ import React from 'react'
 
 function HourlyForecast(props) {
     return (
-        <div className={'hourly-forecast-card ' + (props.nightMode ? 'dark' : 'light')}>
-            <div className='hourly-forecast-card-contents'>
+        <div className={'medium-card ' + (props.nightMode ? 'dark' : 'light')}>
+            <div className='medium-card-contents'>
                 <div className='scrollable-area'>
                     {
                         props.forecast.hourly.slice(1, 25).map(hour => {

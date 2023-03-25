@@ -1,26 +1,3 @@
-.hourly-forecast-card {
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
-    width: 350px;
-    height: 100px;
-    border-radius: 15px;
-    font-size: x-large;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    margin-top: 10px;
-    animation-name: sliding-animation;
-    animation-duration: 500ms;
-    animation-delay: calc(var(--animation-order) * 100ms);
-    animation-timing-function: cubic-bezier(.2, .88, .28, 1.4);
-    animation-fill-mode: forwards;
-}
-
-.hourly-forecast-card-contents {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-}
-
 .scrollable-area {
     width: 95%;
     height: 100%;

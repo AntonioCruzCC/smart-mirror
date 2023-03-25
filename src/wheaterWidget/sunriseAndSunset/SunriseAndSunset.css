@@ -1,0 +1,28 @@
+.sunrise-or-sunset{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block: 10px;
+}
+
+.sunrise-or-sunset img{
+    height: 70%;
+    opacity: 0%;
+    animation: sunrise;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(.24,.51,.73,1.16);;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sunrise{
+    0%{
+        transform: translate(0%, 50%);
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
